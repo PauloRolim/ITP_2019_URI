@@ -1,33 +1,28 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main (){
+int main() {
+ 
+    int input = 100;
+    int max = 0;
+    int position = 0;
+    int lista[100];
+    int i = 0;
 
-
-    int lista[10];
-    int i;
-    int maior[10];
-
-    srand(time(NULL));
-
-  /*  for (i = 0; i <= 10; i++)
+    for (i = 0; i < input; i++)
     {
-        lista[i] = 0;
-    }*/
-    
-    for (i = 0; i <= 10; i++)
-    {
-        lista[i] = rand() % 100; 
+        scanf("%d", &lista[i]);
     }
 
-    
-
-    
-    for (i = 0; i <= 10; i++)
+    for (i = 0; i < lista; i++)
     {
-        printf("lista[%d] = %d\n", i, lista[i]);
-
+        if (lista[i] >= max)
+        {
+            max = lista[i];
+            position = i;
+        }
     }
-           
+    printf("%d\n", max);
+    printf("%d\n", position + 1);
+ 
     return 0;
 }
