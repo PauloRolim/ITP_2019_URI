@@ -1,43 +1,53 @@
 #include <stdio.h>
-
-int main(){
-
+ 
+int main() {
+ 
     double nota01;
     double nota02;
-    int verificador = 0;
+    int cont1 = 0 , cont2 = 0;
+    int i = 0;
+    int notainvalida = 0;
+    double media;
 
-    
-
-    do
+    while (cont1 < 2)
     {
-      scanf("%lf %lf", &nota01, &nota02);
+        scanf("%lf", &nota01);
+        if (nota01 < 0 || nota01 > 10)
+        {
+            cont1--;
+            notainvalida++;
+        } else
+        {
+            cont1 = 3;
+        }
+    }
+    
+    while (cont2 < 2)
+    {
+        scanf("%lf", &nota02);
+        if (nota02 < 0 || nota02 > 10)
+        {
+            cont2--;
+            notainvalida++;
+        } else
+        {
+            cont2 = 3;
+        }
+        
+        
+    }
+    
 
-      if (nota01 < 0.0)
-      {
-          printf("nota invalida");
-          
-      } else
-      {
-          verificador++;
-      }
-      
+    while ( i < notainvalida)
+    {
+        printf("nota invalida\n");
+        i++;
+    }
+     
     
-      if (nota02 < 0.0)
-      {
-          printf("nota invalida");
-          
-      } else
-      {
-          verificador++;
-      }
+    media = (double)(nota01 + nota02) / 2;
 
-    } while (verificador == 2);
-    
-    
-    
-    printf(" Nota 1 = %.2lf e Nota 2 = %.2lf", nota01, nota02);
-    
-
-
+    printf("media = %.2lf\n", media);
+ 
     return 0;
 }
